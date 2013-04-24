@@ -542,10 +542,9 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
   php_value session.cookie_httponly true
 </IfModule>
 
-# Adding CI Rewrite rule
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /infinity
+    RewriteBase /cleanplate
 
     #Removes access to the system folder by users.
     #Additionally this will allow you to create a System.php controller,
@@ -574,5 +573,5 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
     # can be sent to index.php, and everything works as normal.
     # Submitted by: ElliotHaughin
 
-    ErrorDocument 404 /index.php
+    ErrorDocument 404 /404.html
 </IfModule>
