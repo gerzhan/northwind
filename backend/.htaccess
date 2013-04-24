@@ -544,7 +544,7 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /cleanplate
+    RewriteBase /northwind/backend
 
     #Removes access to the system folder by users.
     #Additionally this will allow you to create a System.php controller,
