@@ -19,7 +19,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data['header']['page_title'] = 'Welcome to Cleanplate with CI, Bootstrap'; // title for the page
+		$data['content']['view_name'] = 'dummy_content'; // name of the partial view to load
+		$data['content']['view_data'] = array(); // data coming inside the view
+
+		$this->load->view('main_page_view',$data);
 	}
 }
 

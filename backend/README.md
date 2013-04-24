@@ -1,6 +1,4 @@
-infinity
-========
+cleanplate
+==========
 
-Demo application like Toggl using codegnitor and Angular JS
-
-1. Timesheet entries
+This is my clean installation of Code Igniter framework with Bootstrap CSS Framework and a basic page layout
