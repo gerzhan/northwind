@@ -8,12 +8,18 @@ customerModule.controller('customerList', function($scope,CustDetailsList){
 	});
 
 	$scope.$on('getCustomersList', function(events, customers) {
-		$scope.customers = customers;
+		// $scope.customers = customers;
 	}) 
 
 	$scope.postData =function(customerdata){
-//		$params = $.param({'data' : JSON.stringify(customerdata))});
-//		CustDetailsList.saveCustomerData($params);
-		alert(JSON.stringify(customerdata));
+		$params = $.param({'data' : JSON.stringify(customerdata)});
+
+		CustDetailsList.saveCustomerData($params);
+		
+
+		$scope.$on('getCustomersList', function(events, customers) {
+			// $scope.customers = customers;
+		});
+
 	}
 });
