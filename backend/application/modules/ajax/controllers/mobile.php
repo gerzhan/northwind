@@ -7,11 +7,16 @@ class Mobile extends CI_Controller {
 	}
 	
 	public function index() {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 		$data = $this->cust->get_customers();
 		echo json_encode($data);
 	}
 
 	public function save_customer_profile() {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+    
 		$post_data = $this->input->post('data');
 		$post_data = json_decode($post_data);
 		$data = array(
