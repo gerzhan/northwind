@@ -1,0 +1,10 @@
+<h3>Categories</h3>
+<div ng-controller="productsAndCategories">
+	
+	<ul>
+		<li ng-repeat="category in categories">
+			<a href="#/products/{{category.CategoryID}}">{{category.CategoryName}}</a>
+		</li>
+	</ul>
+
+</div>

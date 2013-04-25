@@ -12,14 +12,15 @@
 <script src="js/customer/customer_app.js"></script>
 </head>
 <body>
-	<div class="container-fluid" ng-controller="customerList">
+	<div class="container-fluid">
 		<p>Customer List</p>
 		<div class="row-fluid">
 
 			<div class="span6">
-				<ul>
+				<ul ng-controller="customerList">
 					<li ng-repeat="cust in customers">{{cust.ContactName}}</li>
 				</ul>
+				<div ng-view></div>
 			</div>
 
 			<div class="span6">
