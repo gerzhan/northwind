@@ -9,6 +9,7 @@ class Customers_model extends CI_Model {
 
 	/**
 	 * Get customers based on the query
+	 * Right nwo the limit is set to 10 but the argument can be set to change the number.
 	 * @param int $limit
 	 * @param int $offset
 	 * @return mixed

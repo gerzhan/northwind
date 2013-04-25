@@ -8,6 +8,7 @@ class Mobile extends CI_Controller {
 
 	/**
 	 * This page gives the list of customers available
+	 * Limit set to 10 which can be changed.
 	 */
 	public function index() {
 		$data = $this->cust->get_customers();
@@ -43,5 +44,16 @@ class Mobile extends CI_Controller {
 		$this->load->model('prod_cat_model', 'prod_cat');
 		$data = $this->prod_cat->get_categories();
 		echo json_encode($data);
+	}
+
+	public function product_by_id($category_id = null) {
+		if ($category_id != null) {
+			$this->load->model('prod_cat_model', 'prod_cat');
+			$data = $this->prod_cat->get_products_by_category($category_id);
+			echo json_encode($data);
+		}
+		else {
+			show_error('Identifier required.', 500);
+		}
 	}
 }
