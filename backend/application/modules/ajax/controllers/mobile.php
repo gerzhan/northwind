@@ -5,12 +5,18 @@ class Mobile extends CI_Controller {
 		parent::__construct();
 		$this->load->model('customers_model', 'cust');
 	}
-	
+
+	/**
+	 * This page gives the list of customers available
+	 */
 	public function index() {
 		$data = $this->cust->get_customers();
 		echo json_encode($data);
 	}
 
+	/**
+	 * This page is taking the post data and saving the entry to the database.
+	 */
 	public function save_customer_profile() {
 		$post_data = $this->input->post('data');
 		$post_data = json_decode($post_data);
@@ -27,9 +33,15 @@ class Mobile extends CI_Controller {
 			'Phone' => $post_data->Phone,
 			'Fax' => $post_data->Fax,
 		);
-//		echo json_encode($this->input->post('data'));exit();
+
 		$this->db->insert('customers', $data);
 
 		$this->index();
+	}
+
+	public function get_categories() {
+		$this->load->model('prod_cat_model', 'prod_cat');
+		$data = $this->prod_cat->get_categories();
+		echo json_encode($data);
 	}
 }
