@@ -1,7 +1,21 @@
 /*Define module*/
-var cust_module = angular.module('cust_module', []);
+var customerModule = angular.module('customerModule', []);
 
 /*Header request to send cross domain data*/
-cust_module.config(['$httpProvider', function($httpProvider) {
+customerModule.config(['$httpProvider', function($httpProvider) {
     delete $httpProvider.defaults.headers.common["X-Requested-With"]
+}]);
+
+/*Sharing docto data*/
+customerModule.factory('CustDetailsList', ['$http', '$rootScope', function ($http, $rootScope) {
+	var customers = [];
+	return {
+	getCustomersList: function() {
+      return $http.get("http://localhost/northwind/backend/ajax/mobile").then(function(response) {
+        customers = response.data;
+        $rootScope.$broadcast('getCustomersList',customers);
+        return customers;
+      })
+    }
+	};
 }]);
