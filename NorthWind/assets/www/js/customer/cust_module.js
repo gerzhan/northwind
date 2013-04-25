@@ -16,7 +16,7 @@ customerModule.factory('CustDetailsList', ['$http', '$rootScope', function ($htt
 				$rootScope.$broadcast('getCustomersList',customers);
 				return customers;
 			})
-		}
+		},
 
 	saveCustomerData: function($params) {
 		return $http({
