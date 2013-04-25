@@ -11,6 +11,8 @@ class Mobile extends CI_Controller {
 	 * Limit set to 10 which can be changed.
 	 */
 	public function index() {
+		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 		$data = $this->cust->get_customers();
 		echo json_encode($data);
 	}
@@ -19,6 +21,8 @@ class Mobile extends CI_Controller {
 	 * This page is taking the post data and saving the entry to the database.
 	 */
 	public function save_customer_profile() {
+		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 		$post_data = $this->input->post('data');
 		$post_data = json_decode($post_data);
 		$data = array(
@@ -41,6 +45,8 @@ class Mobile extends CI_Controller {
 	}
 
 	public function get_categories() {
+		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 		$this->load->model('prod_cat_model', 'prod_cat');
 		$data = $this->prod_cat->get_categories();
 		echo json_encode($data);
@@ -48,6 +54,8 @@ class Mobile extends CI_Controller {
 
 	public function product_by_id($category_id = null) {
 		if ($category_id != null) {
+			header('Access-Control-Allow-Origin: *');
+			header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 			$this->load->model('prod_cat_model', 'prod_cat');
 			$data = $this->prod_cat->get_products_by_category($category_id);
 			echo json_encode($data);
