@@ -1,8 +1,11 @@
-categoryModule.controller('categoryDetails', function($scope) {
+categoryModule.controller('categoryDetails', function($scope,categoryList) {
     
-    $scope.categories= [{
-        category: 'Beverages'},{
-        category: 'Condiments'},{
-        category: 'Confections'
-    }];
+    categoryList.getCategoryList().then(function(categories) {
+		$scope.categories = categories;
+	})
+
+	$scope.$on('getCategoryList', function(events, categories) {
+		$scope.categories = categories;
+	}) 
+	
 });
