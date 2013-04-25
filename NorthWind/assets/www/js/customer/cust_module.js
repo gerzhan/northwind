@@ -1,4 +1,6 @@
 /*Define module*/
+var serverName = 'http://localhost/northwind/backend/';
+var getCustomersListURL = serverName + 'ajax/mobile';
 var customerModule = angular.module('customerModule', []);
 
 /*Header request to send cross domain data*/
@@ -11,12 +13,12 @@ customerModule.factory('CustDetailsList', ['$http', '$rootScope', function ($htt
 	var customers = [];
 	return {
 		getCustomersList: function() {
-			return $http.get("http://localhost/northwind/backend/ajax/mobile").then(function(response) {
+			return $http.get(getCustomersListURL).then(function(response) {
 				customers = response.data;
 				$rootScope.$broadcast('getCustomersList',customers);
 				return customers;
 			})
-		}
+		},
 
 	saveCustomerData: function($params) {
 		return $http({
