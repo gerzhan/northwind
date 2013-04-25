@@ -8,7 +8,7 @@ customerModule.controller('customerList', function($scope,CustDetailsList){
 	});
 
 	$scope.$on('getCustomersList', function(events, customers) {
-		// $scope.customers = customers;
+		$scope.customers = customers;
 	}) 
 
 	$scope.postData =function(customerdata){
@@ -18,7 +18,7 @@ customerModule.controller('customerList', function($scope,CustDetailsList){
 		
 
 		$scope.$on('getCustomersList', function(events, customers) {
-			// $scope.customers = customers;
+      $scope.customers = customers;
 		});
 
 	}

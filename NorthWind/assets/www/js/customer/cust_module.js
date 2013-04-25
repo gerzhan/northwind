@@ -1,5 +1,5 @@
 /*Define module*/
-var serverName = 'http://localhost/northwind/backend/';
+var serverName = 'http://192.168.3.76/northwind/backend/';
 var getCustomersListURL = serverName + 'ajax/mobile';
 var saveCustomerDataURL = serverName + 'ajax/mobile/save_customer_profile'
 
@@ -35,4 +35,4 @@ customerModule.factory('CustDetailsList', ['$http', '$rootScope', function ($htt
 			});
 		}
 	};
-}]);
+}]); 

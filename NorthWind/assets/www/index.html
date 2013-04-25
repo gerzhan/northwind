@@ -2,56 +2,54 @@
 <html ng-app="customerModule">
 <head>
 <title>New Profile</title>
-	<link rel="stylesheet" href="css/bootstrap.css" />
-  <link rel="stylesheet" href="css/bootstrap-responsive.css" />
-  <script src="js/jquery-1.8.3.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="js/angular.min.js"></script>
-  <script src="js/cordova-2.4.0.js"></script>
-	<script src="js/customer/cust_module.js"></script>
-  <script src="js/customer/customer_app.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/bootstrap-responsive.css" />
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/cordova-2.4.0.js"></script>
+<script src="js/customer/cust_module.js"></script>
+<script src="js/customer/customer_app.js"></script>
 </head>
 <body>
-  <div class="container-fluid" ng-controller="customerList">
-  <p>Customer List</p>
-    <div class="row-fluid">
-    
-      <div class="span6">
-      <ul>
-        <li ng-repeat="cust in customers">
-            {{cust.ContactName}}
-        </li>
-      </ul>
-      </div>
-      
-      <div class="span6">
-        <form action="">
-          <label>Company Name</label>
-          <input type="text" ng-model="customersdata.CompanyName"/>
-          <label>Contact Name</label>
-          <input type="text" ng-model="customersdata.ContactName"/>
-          <label>Title</label>
-          <input type="text" ng-model="customersdata.ContactTitle"/>
-          <label>Address</label>
-          <input type="text" ng-model="customersdata.Address"/>
-          <label>City</label>
-          <input type="text" ng-model="customersdata.City"/>
-          <label>Region</label>
-          <input type="text" ng-model="customersdata.Region"/>
-          <label>Postal Code</label>
-          <input type="text" ng-model="customersdata.PostalCode"/>
-          <label>Country</label>
-          <input type="text" ng-model="customersdata.Country"/>
-          <label>Phone</label>
-          <input type="text" ng-model="customersdata.Phone"/>
-          <label>Fax</label>
-          <input type="text" ng-model="customersdata.Fax"/>
-          <label></label>
-          <button type="submit"  class="btn" ng-click="postData(customersdata)">Post</button>
-        </form>
-      </div>
-      <!-- {{customersdata}} -->
-    </div>
-  </div>
+	<div class="container-fluid" ng-controller="customerList">
+		<p>Customer List</p>
+		<div class="row-fluid">
+
+			<div class="span6">
+				<ul>
+					<li ng-repeat="cust in customers">{{cust.ContactName}}</li>
+				</ul>
+			</div>
+
+			<div class="span6">
+				<form action="">
+					<label>Company Name</label> 
+					<input type="text"	ng-model="customersdata.CompanyName" /> 
+					<label>Contact Name</label> 
+					<input type="text" ng-model="customersdata.ContactName" /> 
+					<label>Title</label>
+					<input type="text" ng-model="customersdata.ContactTitle" /> 
+					<label>Address</label>
+					<input type="text" ng-model="customersdata.Address" /> 
+					<label>City</label>
+					<input type="text" ng-model="customersdata.City" /> 
+					<label>Region</label>
+					<input type="text" ng-model="customersdata.Region" /> 
+					<label>PostalCode</label> 
+					<input type="text" ng-model="customersdata.PostalCode" /> 
+					<label>Country</label>
+					<input type="text" ng-model="customersdata.Country" /> 
+					<label>Phone</label>
+					<input type="text" ng-model="customersdata.Phone" /> 
+					<label>Fax</label>
+					<input type="text" ng-model="customersdata.Fax" /> 
+					<label></label>
+					<button type="submit" class="btn"	ng-click="postData(customersdata)">Post</button>
+				</form>
+			</div>
+			<!-- {{customersdata}} -->
+		</div>
+	</div>
 </body>
 </html>
